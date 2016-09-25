@@ -1,2 +1,7 @@
-- @plays.each do |play|
-	%h2= link_to play.title, play
+%h1.current-category= params[:category]
+
+- if @plays.empty?
+	%h3 There are no plays in this category
+- else
+	- @plays.each do |play|
+		%h2= link_to play.title, play
