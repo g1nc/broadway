@@ -3,5 +3,8 @@
 - if @plays.empty?
 	%h3 There are no plays in this category
 - else
-	- @plays.each do |play|
-		%h2= link_to play.title, play
+	.row
+		- @plays.each do |play|
+			.col-md-3
+				= link_to play do
+					%img{:src => play.image.url(:thumb), :alt => play.title, :class => 'play'}
