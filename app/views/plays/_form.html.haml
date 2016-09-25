@@ -1,4 +1,5 @@
 = simple_form_for @play, html: { multipart: true } do |f|
+	= f.input :image, as: :file
 	= f.input :title, label: 'Play Title'
 	= f.select :category_id, Category.all.map{ |c| [c.name, c.id] }
 	= f.input :description

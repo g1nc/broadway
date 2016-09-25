@@ -14,11 +14,11 @@ class PlaysController < ApplicationController
 	end
 
 	def new
-		@play = current_user.play.build
+		@play = current_user.plays.build
 	end
 
 	def create
-		@play = current_user.play.build(play_params)
+		@play = current_user.plays.build(play_params)
 
 		if @play.save
 			redirect_to root_path
@@ -49,6 +49,6 @@ class PlaysController < ApplicationController
 		end
 
 		def play_params
-			params.require(:play).permit(:title, :description, :director, :category_id)
+			params.require(:play).permit(:title, :description, :director, :category_id, :image)
 		end
 end
