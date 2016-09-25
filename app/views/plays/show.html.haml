@@ -13,7 +13,7 @@
 	.col-md-12
 		.reviews
 			%h1 Reviews
-			= render @play.reviews
+			= render @play.reviews.order('created_at DESC')
 
 			= link_to 'Add Review', new_play_review_path(@play), class: 'btn btn-info'
 
