@@ -1,6 +1,10 @@
 .row
 	.col-md-4
 		%img{:src => @play.image.url(:medium), :alt => @play.title, :class => 'play-show'}
+		.links.btn-group
+			-if signed_in? && @play.user_id == current_user.id
+				= link_to 'Edit', edit_play_path(@play), class: 'btn btn-custom'
+				= link_to 'Delete', @play, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' 
 
 	.col-md-8
 		.play-info
@@ -18,9 +22,5 @@
 			%h1 Reviews
 			= render @play.reviews.order('created_at DESC')
 
-			= link_to 'Add Review', new_play_review_path(@play), class: 'btn btn-info'
+			= link_to 'Add Review', new_play_review_path(@play), class: 'btn-custom'
 
-.links.btn-group
-	-if signed_in? && @play.user_id == current_user.id
-		= link_to 'Edit', edit_play_path(@play), class: 'btn btn-default'
-		= link_to 'Delete', @play, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' 

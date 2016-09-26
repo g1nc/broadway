@@ -4,5 +4,5 @@
 
 	- if user_signed_in? && review.user_id == current_user.id
 		.links.btn-group
-			= link_to 'Edit', edit_play_review_path(review.play, review), class: 'btn btn-default'
-			= link_to 'Delete', play_review_path(review.play, review), method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-danger'
+			= link_to 'Edit', edit_play_review_path(review.play, review), class: 'btn btn-custom'
+			= link_to 'Delete', play_review_path(review.play, review), method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-custom'

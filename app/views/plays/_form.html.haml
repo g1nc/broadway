@@ -4,4 +4,4 @@
 	= f.select :category_id, Category.all.map{ |c| [c.name, c.id] }
 	= f.input :description
 	= f.input :director
-	= f.button :submit
+	= f.button :submit, class: 'btn-custom2'
