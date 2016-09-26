@@ -7,6 +7,9 @@
 			%h2.play-title= @play.title
 			%h3.play-director= "From #{@play.director}"
 			%h4.play-director= @play.category.name
+			%h4.avg-rating Average Rating
+			.average-review-rating{ data: { score: @average_review } }
+			%span.number-of-reviews= "From #{pluralize(@play.reviews.count, 'review')}"
 			%p.play-desc= @play.description
 
 .row
